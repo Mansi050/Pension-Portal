@@ -1,4 +1,4 @@
-FROM public.ecr.aws/amazoncorretto/amazoncorretto:8
-EXPOSE 8083
-ADD target/authorization-microservice-0.0.1-SNAPSHOT.jar authorization-microservice-0.0.1-SNAPSHOT.jar 
-ENTRYPOINT ["java","-jar","/authorization-microservice-0.0.1-SNAPSHOT.jar"]
+FROM openjdk:17
+EXPOSE 8091
+ADD target/ProcessManagementPortal-0.0.1-SNAPSHOT.jar ProcessManagementPortal-0.0.1-SNAPSHOT.jar
+ENTRYPOINT ["sh", "-c", "java ${JAVA_OPTS} -jar ProcessManagementPortal-0.0.1-SNAPSHOT.jar"]
