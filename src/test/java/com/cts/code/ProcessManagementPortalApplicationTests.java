@@ -57,14 +57,14 @@ class ProcessManagementPortalApplicationTests {
 	}
 	
 	
-	@Test
-	public void validatelogin() throws Exception{
-		AuthenticationRequest authenticationRequest = new AuthenticationRequest("dhruv","admin");
-		ObjectMapper objectMapper = new ObjectMapper();
-		String jsonString = objectMapper.writeValueAsString(authenticationRequest);
-		mockMvc.perform(post("/portal/login").contentType(MediaType.APPLICATION_JSON).content(jsonString)).andExpect(status().isOk());
+// 	@Test
+// 	public void validatelogin() throws Exception{
+// 		AuthenticationRequest authenticationRequest = new AuthenticationRequest("dhruv","admin");
+// 		ObjectMapper objectMapper = new ObjectMapper();
+// 		String jsonString = objectMapper.writeValueAsString(authenticationRequest);
+// 		mockMvc.perform(post("/portal/login").contentType(MediaType.APPLICATION_JSON).content(jsonString)).andExpect(status().isOk());
 		
-	}
+// 	}
 	
 //	@Test
 //	public void Invalidlogin() throws Exception{
@@ -76,17 +76,17 @@ class ProcessManagementPortalApplicationTests {
 //	}
 
 	
-	@Test
-	public void validatePensionerDetailsCorrectTokenCorrectAdhar() throws Exception {
-		mockMvc.perform(get("/portal/991429204770").header("Authorization","Bearer "+tokenStringcorrect)).andExpect(status().isOk());
+// 	@Test
+// 	public void validatePensionerDetailsCorrectTokenCorrectAdhar() throws Exception {
+// 		mockMvc.perform(get("/portal/991429204770").header("Authorization","Bearer "+tokenStringcorrect)).andExpect(status().isOk());
 	
-	}
+// 	}
 	
-	@Test
-	public void validatePensionerDetailsCorrectTokenWrongAdhar() throws Exception {
-		mockMvc.perform(get("/portal/991429204771").header("Authorization","Bearer "+tokenStringcorrect)).andExpect(status().isOk());
+// 	@Test
+// 	public void validatePensionerDetailsCorrectTokenWrongAdhar() throws Exception {
+// 		mockMvc.perform(get("/portal/991429204771").header("Authorization","Bearer "+tokenStringcorrect)).andExpect(status().isOk());
 	
-	}
+// 	}
 	
 //	@Test
 //	public void validatePensionerDetailsWrongTokenCorrectAdhar() throws Exception {
